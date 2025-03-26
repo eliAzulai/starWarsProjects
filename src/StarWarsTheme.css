@@ -1,0 +1,168 @@
+/* StarWarsTheme.css */
+
+/* Import Star Wars font */
+@import url('https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap');
+
+/* Star Wars color palette */
+:root {
+  --sw-yellow: #FFE81F;
+  --sw-black: #000000;
+  --sw-space-blue: #071E3D;
+  --sw-dark-blue: #1F4068;
+  --sw-light-blue: #278EA5;
+  --sw-red: #E4000F;
+}
+
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Pathway Gothic One', sans-serif;
+  color: white;
+  background-color: var(--sw-black);
+  overflow-x: hidden;
+}
+
+/* Star Wars logo Container */
+.logo-container {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  /* Star Wars logo Container */
+  .star-wars-logo {
+    max-width: 300px;
+    height: auto;
+  }
+  
+/* Star Wars App Container */
+.star-wars-app {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Star background */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000 url('https://i.imgur.com/YKY28eT.png') repeat top center;
+  z-index: -2;
+}
+
+.twinkling {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent url('https://i.imgur.com/XYMF4ca.png') repeat top center;
+  z-index: -1;
+  animation: move-twink-back 200s linear infinite;
+}
+
+@keyframes move-twink-back {
+  from {background-position: 0 0;}
+  to {background-position: -10000px 5000px;}
+}
+
+/* Content container */
+.content-container {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+}
+
+/* Star Wars Title */
+.star-wars-title {
+  font-family: 'Pathway Gothic One', sans-serif;
+  color: var(--sw-yellow);
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  text-shadow: 0 0 10px var(--sw-yellow);
+  margin-bottom: 2rem;
+}
+
+/* Loading text */
+.loading-text {
+  color: var(--sw-yellow);
+  font-size: 1.5rem;
+  text-shadow: 0 0 5px var(--sw-yellow);
+}
+
+/* Error text */
+.error-text {
+  color: var(--sw-red);
+  font-size: 1.5rem;
+  text-shadow: 0 0 5px var(--sw-red);
+}
+
+/* Star Wars Card */
+.star-wars-card {
+  background: linear-gradient(145deg, var(--sw-space-blue), var(--sw-dark-blue));
+  border: 2px solid var(--sw-light-blue);
+  border-radius: 10px;
+  margin: 1rem;
+  width: 280px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(39, 142, 165, 0.5);
+  overflow: hidden;
+  position: relative;
+}
+
+.star-wars-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 0 25px rgba(255, 232, 31, 0.6);
+  border-color: var(--sw-yellow);
+}
+
+.star-wars-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--sw-yellow);
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.character-name {
+  color: var(--sw-yellow);
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+  border-bottom: 1px solid var(--sw-light-blue);
+  padding-bottom: 0.5rem;
+}
+
+.character-details {
+  color: white;
+  font-size: 1.1rem;
+}
+
+.detail-label {
+  color: var(--sw-yellow);
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .star-wars-title {
+    font-size: 2.5rem;
+  }
+  
+  .star-wars-card {
+    width: 100%;
+    max-width: 280px;
+  }
+}

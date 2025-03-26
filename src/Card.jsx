@@ -1,16 +1,18 @@
 import React from 'react';
+import './StarWarsTheme.css';
 
 const Card = (props) => {
     return (
-        <div className="bg-light-gray dib br3 pa3 ma2 grow bw2 shadow-5">
-            <img src={`https://robohash.org/${props.name}?set=set5&size=200x200`} alt={props.name} />
-            <div>
-                <h2>{props.name}</h2>
-                <p>Height: {props.height}</p>
-                <p>Mass: {props.mass}</p>
-                <p>Hair Color: {props.hairColor}</p>
-                <p>Birth Year: {props.birthYear}</p>
-                <p>Gender: {props.gender}</p>
+        <div className="star-wars-card">
+            <div className="card-content">
+                <h2 className="character-name">{props.name}</h2>
+                <div className="character-details">
+                    <p><span className="detail-label">Height:</span> {props.height} cm</p>
+                    <p><span className="detail-label">Mass:</span> {props.mass} kg</p>
+                    <p><span className="detail-label">Hair:</span> {props.hairColor}</p>
+                    <p><span className="detail-label">Birth Year:</span> {props.birthYear}</p>
+                    <p><span className="detail-label">Gender:</span> {props.gender}</p>
+                </div>
             </div>
         </div>
     );
